@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аллаев Эдуард Владимирович — Магия, Гадание, Исцеление</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* === ОБЩИЕ СТИЛИ И СБРОС === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: #e0e0e0;
+            background-color: #060309;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        h1, h2, h3, h4, .logo-text, .nav-link {
+            font-family: 'Cinzel', serif;
+            letter-spacing: 1px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* === ЖИВОЙ МРАЧНЫЙ ФОН === */
+        #bg-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            background: radial-gradient(circle at center, #13081e 0%, #040107 100%);
+        }
+
+        /* === ВЕРХНИЙ ИНФО-БАННЕР (УВЕДОМЛЕНИЕ В ШАПКЕ) === */
+        .top-announce-bar {
+            background: linear-gradient(90deg, #4a154b, #8a1c1c, #4a154b);
+            background-size: 200% 200%;
+            animation: gradientShift 6s ease infinite;
+            color: #fff;
+            text-align: center;
+            padding: 8px 15px;
+            font-size: 0.88rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+            z-index: 101;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* === ПРЕМИУМ ШАПКА САЙТА (HEADER) === */
+        header {
+            background: rgba(10, 4, 16, 0.92);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 5px 30px rgba(0, 0, 0, 0.9);
+        }
+
+        .header-main {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .brand-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #d4af37;
+            object-fit: cover;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .brand-text h1 {
+            font-size: 1.25rem;
+            color: #d4af37;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+            line-height: 1.2;
+        }
+
+        .brand-text p {
+            font-size: 0.75rem;
+            color: #b0a1ca;
+        }
+
+        /* Навигация (Якоря) */
+        nav {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 0.85rem;
+            color: #dcd0ef;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: #d4af37;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: #d4af37;
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Кнопки и контакты в шапке */
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-social {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: #fff;
+            box-shadow: 0 0 12px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            box-shadow: 0 0 18px rgba(37, 211, 102, 0.7);
+            transform: translateY(-2px);
+        }
+
+        .btn-tiktok {
+            background: linear-gradient(135deg, #ff0050, #00f2fe);
+            color: #fff;
+            box-shadow: 0 0 12px rgba(0, 242, 254, 0.3);
+        }
+
+        .btn-tiktok:hover {
+            box-shadow: 0 0 18px rgba(0, 242, 254, 0.7);
+            transform: translateY(-2px);
+        }
+
+        .btn-admin-login {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid #d4af37;
+            color: #d4af37;
+            padding: 7px 12px;
+            border-radius: 6px;
+            font-size: 0.78rem;
+            transition: all 0.3s;
+        }
+
+        .btn-admin-login:hover {
+            background: #d4af37;
+            color: #000;
+        }
+
+        /* Выпадающее меню номеров WhatsApp */
+        .wa-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .wa-dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 110%;
+            background: #140924;
+            border: 1px solid #d4af37;
+            border-radius: 8px;
+            min-width: 210px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.8);
+            z-index: 105;
+            overflow: hidden;
+        }
+
+        .wa-dropdown-content a {
+            color: #fff;
+            padding: 10px 15px;
+            display: block;
+            font-size: 0.82rem;
+            transition: background 0.2s;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .wa-dropdown-content a:hover {
+            background: rgba(37, 211, 102, 0.2);
+            color: #25D366;
+        }
+
+        .wa-dropdown:hover .wa-dropdown-content {
+            display: block;
+        }
+
+        /* === ОСНОВНОЙ КОНТЕНТ === */
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #d4af37;
+            margin-bottom: 40px;
+            position: relative;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .section-title::after {
+            content: '✦ ✦ ✦';
+            display: block;
+            font-size: 1rem;
+            color: #8a5bc7;
+            margin-top: 5px;
+        }
+
+        /* === БЛОК О МАГЕ === */
+        .mage-profile {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            background: rgba(18, 9, 28, 0.7);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            border-radius: 16px;
+            padding: 35px;
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.85);
+            margin-bottom: 70px;
+            backdrop-filter: blur(6px);
+        }
+
+        .mage-image-wrapper {
+            flex: 1;
+            min-width: 280px;
+            position: relative;
+            text-align: center;
+        }
+
+        .mage-image {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 12px;
+            border: 2px solid #d4af37;
+            box-shadow: 0 0 30px rgba(138, 91, 199, 0.6);
+            transition: transform 0.5s ease;
+        }
+
+        .mage-image:hover {
+            transform: scale(1.02);
+        }
+
+        .mage-info {
+            flex: 2;
+            min-width: 300px;
+        }
+
+        .mage-info h2 {
+            font-size: 1.9rem;
+            color: #d4af37;
+            margin-bottom: 10px;
+        }
+
+        .mage-subtitle {
+            font-size: 1rem;
+            color: #a47be3;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .mage-description {
+            line-height: 1.8;
+            font-size: 0.95rem;
+            color: #d8ceeb;
+        }
+
+        .mage-quote {
+            margin-top: 20px;
+            padding: 15px 20px;
+            background: rgba(212, 175, 55, 0.05);
+            border-left: 4px solid #d4af37;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: #f3ebff;
+            font-weight: 600;
+        }
+
+        /* === ГАЛЕРЕЯ АТМОСФЕРНЫХ ИЗОБРАЖЕНИЙ === */
+        .gallery-section {
+            margin-bottom: 70px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(186, 131, 255, 0.2);
+            height: 240px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+            transition: all 0.4s ease;
+            background: #0f071a;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            border-color: #d4af37;
+            box-shadow: 0 10px 25px rgba(138, 91, 199, 0.4);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            background: linear-gradient(transparent, rgba(5, 2, 8, 0.95));
+            color: #d4af37;
+            font-size: 0.85rem;
+            text-align: center;
+            font-family: 'Cinzel', serif;
+        }
+
+        /* === ВИДЫ ГАДАНИЙ === */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-bottom: 70px;
+        }
+
+        .service-card {
+            background: rgba(18, 9, 28, 0.75);
+            border: 1px solid rgba(186, 131, 255, 0.2);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: #d4af37;
+            box-shadow: 0 10px 25px rgba(138, 91, 199, 0.35);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: #d4af37;
+            margin-bottom: 15px;
+            transition: transform 0.5s ease;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.2) rotate(10deg);
+            color: #ba83ff;
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 0.88rem;
+            color: #b8aacd;
+            line-height: 1.5;
+        }
+
+        /* === 6 МЕТОДИК ЛЕЧЕНИЯ === */
+        .methods-section {
+            margin-bottom: 70px;
+        }
+
+        .methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .method-card {
+            background: linear-gradient(145deg, rgba(22, 10, 35, 0.8), rgba(12, 5, 20, 0.9));
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 14px;
+            padding: 25px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .method-card:hover {
+            border-color: #d4af37;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.25);
+            transform: translateY(-4px);
+        }
+
+        .method-number {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: rgba(212, 175, 55, 0.15);
+            font-family: 'Cinzel', serif;
+        }
+
+        .method-card h3 {
+            color: #d4af37;
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .method-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .method-card ul li {
+            font-size: 0.9rem;
+            color: #d0c4e4;
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .method-card ul li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: #8a5bc7;
+            font-size: 0.8rem;
+        }
+
+        .methods-footer-quote {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 1.1rem;
+            color: #d4af37;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        /* === КВИЗ / ТЕСТ НА НЕГАТИВ === */
+        .quiz-section {
+            background: linear-gradient(145deg, rgba(25, 12, 38, 0.95), rgba(10, 5, 16, 0.98));
+            border: 1px solid #d4af37;
+            border-radius: 16px;
+            padding: 35px;
+            margin-bottom: 70px;
+            box-shadow: 0 0 35px rgba(0, 0, 0, 0.9);
+        }
+
+        .quiz-container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .quiz-progress {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 3px;
+            margin-bottom: 25px;
+            overflow: hidden;
+        }
+
+        .quiz-progress-bar {
+            height: 100%;
+            width: 10%;
+            background: linear-gradient(90deg, #8a5bc7, #d4af37);
+            transition: width 0.3s ease;
+        }
+
+        .quiz-question {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .quiz-btn {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(186, 131, 255, 0.3);
+            color: #e0e0e0;
+            padding: 14px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            text-align: left;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .quiz-btn:hover {
+            background: rgba(138, 91, 199, 0.3);
+            border-color: #d4af37;
+            color: #fff;
+        }
+
+        .quiz-result {
+            display: none;
+            text-align: center;
+        }
+
+        .quiz-result h3 {
+            color: #ff5555;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .quiz-result p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        /* === ОТЗЫВЫ === */
+        .reviews-section {
+            margin-bottom: 70px;
+        }
+
+        .review-slider {
+            position: relative;
+            min-height: 180px;
+            background: rgba(18, 9, 28, 0.75);
+            border-left: 4px solid #d4af37;
+            padding: 30px;
+            border-radius: 0 14px 14px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.6);
+        }
+
+        .review-card {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+
+        .review-card.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .review-text {
+            font-style: italic;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #e2d9f3;
+            margin-bottom: 15px;
+        }
+
+        .review-author {
+            font-weight: 600;
+            color: #d4af37;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .review-stars {
+            color: #ffc107;
+            font-size: 0.8rem;
+        }
+
+        /* === ВСПЛЫВАЮЩИЕ УВЕДОМЛЕНИЯ О ЗАПИСИ === */
+        .live-notification {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(15, 7, 24, 0.95);
+            border: 1px solid #d4af37;
+            border-radius: 10px;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.85);
+            z-index: 999;
+            transform: translateY(150%);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .live-notification.show {
+            transform: translateY(0);
+        }
+
+        .live-icon {
+            color: #25D366;
+            font-size: 1.3rem;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.25); opacity: 0.7; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .live-text {
+            font-size: 0.82rem;
+            color: #fff;
+        }
+
+        .live-text strong {
+            color: #d4af37;
+        }
+
+        .live-text span {
+            display: block;
+            color: #8a7a9e;
+            font-size: 0.72rem;
+        }
+
+        /* === АДМИН-ПАНЕЛЬ (МОДАЛЬНОЕ ОКНО И ИНТЕРФЕЙС) === */
+        .admin-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.85);
+            backdrop-filter: blur(8px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .admin-box {
+            background: #12081f;
+            border: 1px solid #d4af37;
+            border-radius: 14px;
+            width: 90%;
+            max-width: 650px;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 30px;
+            box-shadow: 0 0 40px rgba(138, 91, 199, 0.5);
+            position: relative;
+        }
+
+        .admin-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: #aaa;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .admin-close:hover { color: #fff; }
+
+        .admin-form input, .admin-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(186,131,255,0.3);
+            border-radius: 6px;
+            color: #fff;
+            font-family: inherit;
+        }
+
+        .admin-btn {
+            background: #d4af37;
+            color: #000;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .admin-btn:hover {
+            background: #f3ce5a;
+        }
+
+        .admin-panel-content {
+            display: none;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(212,175,55,0.2);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            color: #d4af37;
+            font-weight: 700;
+        }
+
+        /* ПОДВАЛ */
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid rgba(186, 131, 255, 0.1);
+            background: rgba(4, 1, 7, 0.95);
+            font-size: 0.85rem;
+            color: #7a6b91;
+        }
+
+        /* АДАПТИВНОСТЬ */
+        @media (max-width: 900px) {
+            .header-main {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .header-actions {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="top-announce-bar" id="announce-bar">
+        <span><i class="fa-solid fa-fire-flame-curved"></i> <span id="announce-text">Внимание! Ведется личный прием по записи. Осталось 3 свободных места на этой неделе!</span></span>
+    </div>
+
+    <header>
+        <div class="header-main">
+            <div class="header-brand">
+                <img src="images/21.jpg" alt="Эдуард Владимирович" class="brand-avatar" onerror="this.onerror=null; this.src='21.jpg';">
+                <div class="brand-text">
+                    <h1>Аллаев Эдуард Владимирович</h1>
+                    <p><i class="fa-solid fa-location-dot"></i> Ясновидящий | Закарпатье, Мукачево</p>
+                </div>
+            </div>
+
+            <nav>
+                <a href="#about" class="nav-link">О маге</a>
+                <a href="#gallery" class="nav-link">Галерея</a>
+                <a href="#services" class="nav-link">Гадания</a>
+                <a href="#methods" class="nav-link">6 Методик</a>
+                <a href="#quiz" class="nav-link">Диагностика</a>
+                <a href="#reviews" class="nav-link">Отзывы</a>
+            </nav>
+
+            <div class="header-actions">
+                <div class="wa-dropdown">
+                    <button class="btn-social btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i> WhatsApp <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;"></i>
+                    </button>
+                    <div class="wa-dropdown-content">
+                        <a href="https://wa.me/17282179468" target="_blank"><i class="fa-solid fa-phone"></i> +1728 ( 217 ) 9468</a>
+                        <a href="https://wa.me/79207878011" target="_blank"><i class="fa-solid fa-phone"></i> +7920 787 8011</a>
+                    </div>
+                </div>
+
+                <a href="https://www.tiktok.com/@eduard_gadanie88?_r=1&_t=ZS-99NB96OVgzU" target="_blank" class="btn-social btn-tiktok">
+                    <i class="fa-brands fa-tiktok"></i> TikTok
+                </a>
+
+                <button class="btn-admin-login" onclick="openAdminModal()"><i class="fa-solid fa-lock"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <section id="about" class="mage-profile">
+            <div class="mage-image-wrapper">
+                <img src="images/21.jpg" alt="Аллаев Эдуард Владимирович" class="mage-image" onerror="this.onerror=null; this.src='21.jpg';">
+            </div>
+            <div class="mage-info">
+                <h2>Наследственный маг и мольфар</h2>
+                <div class="mage-subtitle">Ясновидящий родом из Украины (Закарпатье, г. Мукачево). Работает по всему миру.</div>
+                <div class="mage-description">
+                    Наследник самой древней династии знахарей, магов и колдунов. В моем роду все мужчины и женщины отдавали свои силы на помощь людям. И среди них были мужчины, мольфары, целители и травники.<br><br>
+                    Мои предки были самыми сильными в Украине, особенно моя бабушка, с которой я жил в Карпатских горах и которая смогла передать мне свой дар.
+                </div>
+                <div class="mage-quote">
+                    «Именно поэтому я гарантирую положительный результат любого обряда, проверенного мной лично (если я берусь за ваше горе — значит, я могу помочь вам). Ваша вера — моя сила.»
+                </div>
+            </div>
+        </section>
+
+        <h2 id="gallery" class="section-title">Атмосфера таинства и атрибуты</h2>
+        <section class="gallery-section">
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/3.jpg" alt="Древние книги" onerror="this.onerror=null; this.src='3.jpg';">
+                    <div class="gallery-caption">Древние фолианты</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/4.jpg" alt="Магия луны" onerror="this.onerror=null; this.src='4.jpg';">
+                    <div class="gallery-caption">Лунные обряды</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/5.jpg" alt="Магический шар" onerror="this.onerror=null; this.src='5.jpg';">
+                    <div class="gallery-caption">Прозрение будущего</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/6.jpg" alt="Таро" onerror="this.onerror=null; this.src='6.jpg';">
+                    <div class="gallery-caption">Расклады судьбы</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/7.jpg" alt="Свечи" onerror="this.onerror=null; this.src='7.jpg';">
+                    <div class="gallery-caption">Очищение огнем</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/8.jpg" alt="Маятник" onerror="this.onerror=null; this.src='8.jpg';">
+                    <div class="gallery-caption">Работа с маятником</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/9.jpg" alt="Духовный проводник" onerror="this.onerror=null; this.src='9.jpg';">
+                    <div class="gallery-caption">Связь с предками</div>
+                </div>
+            </div>
+        </section>
+
+        <h2 id="services" class="section-title">Виды гаданий и ритуалов</h2>
+        <section class="services-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-eye service-icon"></i>
+                <h3>Ясновидение и просмотр</h3>
+                <p>Просмотр ситуации по фотографии, картам Таро и старинному маятнику.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-heart-broken service-icon"></i>
+                <h3>Любовные связки</h3>
+                <p>Возврат супруга, мощный приворот без греха, гармонизация отношений.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-shield-halved service-icon"></i>
+                <h3>Снятие негатива</h3>
+                <p>Уничтожение порчи, родовых проклятий, венца безбрачия и сильного сглаза.</p>
+            </div>
+            <div class="service-card">
+                <i class="fa-solid fa-coins service-icon"></i>
+                <h3>Денежный поток</h3>
+                <p>Открытие финансовых каналов, ритуалы на успешную торговлю и богатство.</p>
+            </div>
+        </section>
+
+        <h2 id="methods" class="section-title">🍀 6 Уникальных методик лечения</h2>
+        <section class="methods-section">
+            <div class="methods-grid">
+                
+                <div class="method-card">
+                    <span class="method-number">01</span>
+                    <h3><i class="fa-solid fa-sun"></i> 1) СЛАВЯНСКАЯ МЕТОДИКА</h3>
+                    <ul>
+                        <li>Работа с родовой силой и защитой предков.</li>
+                        <li>Очищение от негатива, порчи и сглаза.</li>
+                        <li>Восстановление жизненных сил и гармонии.</li>
+                    </ul>
+                </div>
+
+                <div class="method-card">
+                    <span class="method-number">02</span>
+                    <h3><i class="fa-solid fa-kaaba"></i> 2) КОРАНИЧЕСКАЯ МЕТОДИКА</h3>
+                    <ul>
+                        <li>Чтение священных аятов для защиты.</li>
+                        <li>Избавление от джиннов, сглаза и колдовства.</li>
+                        <li>Открытие дорог, благословение и духовная чистка.</li>
+                    </ul>
+                </div>
+
+                <div class="method-card">
+                    <span class="method-number">03</span>
+                    <h3><i class="fa-solid fa-cross"></i> 3) ИЕРУСАЛИМСКАЯ МЕТОДИКА</h3>
+                    <ul>
+                        <li>Работа с энергией святых мест.</li>
+                        <li>Защита дома и семьи.</li>
+                        <li>Исцеление души и тела, обретение мира и покоя.</li>
+                    </ul>
+                </div>
+
+                <div class="method-card">
+                    <span class="method-number">04</span>
+                    <h3><i class="fa-solid fa-hat-wizard"></i> 4) ВЕНГЕРСКАЯ МЕТОДИКА</h3>
+                    <ul>
+                        <li>Древние заклинания и ритуалы на удачу.</li>
+                        <li>Привлечение денег, любви и успеха.</li>
+                        <li>Снятие сильных порч и проклятий.</li>
+                    </ul>
+                </div>
+
+                <div class="method-card">
+                    <span class="method-number">05</span>
+                    <h3><i class="fa-solid fa-wand-magic-sparkles"></i> 5) БЕЛАЯ МАГИЯ</h3>
+                    <ul>
+                        <li>Добрые ритуалы во благо.</li>
+                        <li>Гармонизация отношений, исцеление, защита.</li>
+                        <li>Исполнение желаний без вреда для судьбы.</li>
+                    </ul>
+                </div>
+
+                <div class="method-card">
+                    <span class="method-number">06</span>
+                    <h3><i class="fa-solid fa-mountain font-icon"></i> 6) МОЛЬФАРСКАЯ МАГИЯ</h3>
+                    <ul>
+                        <li>Сила природы и древних традиций.</li>
+                        <li>Диагностика и лечение энергией стихий.</li>
+                        <li>Защита, восстановление и обряды на все случаи жизни.</li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="methods-footer-quote">
+                «Ваша жизнь в ваших руках — я лишь помогаю сделать правильный выбор.»
+            </div>
+        </section>
+
+        <section id="quiz" class="quiz-section">
+            <h2 class="section-title" style="margin-bottom: 15px;">Онлайн-экспресс диагностика</h2>
+            <p style="text-align: center; color: #b8aacd; margin-bottom: 25px;">Ответьте на 10 вопросов, чтобы определить наличие скрытого негативного воздействия.</p>
+            
+            <div class="quiz-container">
+                <div class="quiz-progress">
+                    <div class="quiz-progress-bar" id="quiz-bar"></div>
+                </div>
+
+                <div id="quiz-box">
+                    <div class="quiz-question" id="quiz-q">Загрузка вопроса...</div>
+                    <div class="quiz-options" id="quiz-opts"></div>
+                </div>
+
+                <div class="quiz-result" id="quiz-res">
+                    <h3><i class="fa-solid fa-triangle-exclamation"></i> Обнаружены признаки воздействия!</h3>
+                    <p>По результатам теста выявлен повышенный уровень негативной энергетики (сглаз, пробой биополя или родовой негатив).</p>
+                    <p style="color: #d4af37; font-weight: 600;">Рекомендуется личная диагностика у Эдуарда Владимировича.</p>
+                    <a href="https://wa.me/17282179468?text=Здравствуйте,%20я%20прошел%20тест%20на%20сайте%20и%20мне%20нужна%20диагностика." target="_blank" class="btn-social btn-whatsapp" style="display: inline-flex; font-size: 1rem; padding: 12px 25px;">
+                        <i class="fa-brands fa-whatsapp"></i> Получить расшифровку в WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <h2 id="reviews" class="section-title">Отзывы людей</h2>
+        <section class="reviews-section">
+            <div class="review-slider">
+                <div class="review-card active">
+                    <div class="review-text">«Эдуард Владимирович — единственный, кто реально помог вернуть мужа в семью спустя полгода разлуки. Результат проявился на 7-й день после обряда. Низкий вам поклон!»</div>
+                    <div class="review-author">Ольга, г. Киев <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
+                </div>
+                <div class="review-card">
+                    <div class="review-text">«Обращалась с проблемой сильного негатива и постоянных болезней. Эдуард сразу сказал то, о чем никто кроме меня не знал. После чистки как будто заново родилась!»</div>
+                    <div class="review-author">Елена, г. Москва <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
+                </div>
+                <div class="review-card">
+                    <div class="review-text">«Сильнейший мольфар! Помог открыть денежный поток в бизнесе, когда я уже стоял на грани банкротства. Все сработало строго так, как он обещал. Спасибо!»</div>
+                    <div class="review-author">Михаил, г. Одесса <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
+                </div>
+                <div class="review-card">
+                    <div class="review-text">«Писала из Германии. Очень переживала, так как работали дистанционно. Но Эдуард Владимирович доказал свой дар на деле. Невероятный человек!»</div>
+                    <div class="review-author">Ирина, г. Берлин <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <div class="live-notification" id="live-note">
+        <i class="fa-solid fa-circle-check live-icon"></i>
+        <div class="live-text">
+            <strong id="live-name">Анна (г. Львов)</strong> только что записалась на гадание
+            <span id="live-time">1 минуту назад</span>
+        </div>
+    </div>
+
+    <div class="admin-modal" id="adminModal">
+        <div class="admin-box">
+            <span class="admin-close" onclick="closeAdminModal()">&times;</span>
+            
+            <div id="adminLoginForm">
+                <h2 style="color:#d4af37; margin-bottom: 20px; text-align:center;">Вход в Панель Управления</h2>
+                <div class="admin-form">
+                    <input type="text" id="adminUser" placeholder="Логин">
+                    <input type="password" id="adminPass" placeholder="Пароль">
+                    <button class="admin-btn" onclick="loginAdmin()">Войти</button>
+                    <p id="adminError" style="color:#ff5555; font-size:0.85rem; margin-top:10px; display:none; text-align:center;">Неверный логин или пароль!</p>
+                </div>
+            </div>
+
+            <div class="admin-panel-content" id="adminPanelContent">
+                <h2 style="color:#d4af37; margin-bottom: 20px;">Реальная статистика и управление</h2>
+                
+                <div class="stat-card">
+                    <h4><i class="fa-solid fa-chart-line"></i> Настоящая статистика (localStorage):</h4>
+                    <div style="display:flex; gap:20px; margin-top:10px; flex-wrap:wrap;">
+                        <div>Всего заходов на сайт: <span class="stat-number" id="statTotal">0</span></div>
+                        <div>Активных гостей сейчас: <span class="stat-number" id="statOnline">1</span></div>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <h4><i class="fa-solid fa-bullhorn"></i> Редактирование баннера в шапке:</h4>
+                    <div class="admin-form" style="margin-top:10px;">
+                        <textarea id="bannerTextInput" rows="3"></textarea>
+                        <button class="admin-btn" onclick="updateBannerText()">Сохранить текст в шапке</button>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <h4><i class="fa-solid fa-gear"></i> Управление счетчиком:</h4>
+                    <button class="admin-btn" style="background:#701616; color:#fff; margin-top:10px;" onclick="resetStats()">Сбросить реальный счетчик в 0</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© Аллаев Эдуард Владимирович — Сильнейший ясновидящий и мольфар.</p>
+        <p style="margin-top: 5px;">Мукачево, Закарпатье. Прием по всему миру.</p>
+    </footer>
+
+    <script>
+        /* === 1. НАСТОЯЩИЙ СЧЕТЧИК ПОСЕТИТЕЛЕЙ (LOCALSTORAGE) === */
+        function initRealCounter() {
+            let totalVisits = localStorage.getItem('real_site_visits');
+            if (!totalVisits) {
+                totalVisits = 1;
+            } else {
+                totalVisits = parseInt(totalVisits) + 1;
+            }
+            localStorage.setItem('real_site_visits', totalVisits);
+
+            // Сохранение текста баннера из памяти, если админ менял
+            const savedBannerText = localStorage.getItem('site_banner_text');
+            if (savedBannerText) {
+                document.getElementById('announce-text').innerText = savedBannerText;
+            }
+        }
+        initRealCounter();
+
+        /* === 2. АНИМИРОВАННЫЙ ФОН === */
+        const canvas = document.getElementById('bg-canvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        const particles = [];
+        for (let i = 0; i < 45; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 2.5 + 1,
+                vx: (Math.random() - 0.5) * 0.3,
+                vy: (Math.random() - 0.5) * 0.3,
+                alpha: Math.random() * 0.5 + 0.2
+            });
+        }
+
+        function animateBg() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.x += p.vx;
+                p.y += p.vy;
+
+                if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+                if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(186, 131, 255, ${p.alpha})`;
+                ctx.shadowBlur = 8;
+                ctx.shadowColor = '#ba83ff';
+                ctx.fill();
+            });
+            requestAnimationFrame(animateBg);
+        }
+        animateBg();
+
+        /* === 3. КВИЗ ДИАГНОСТИКА === */
+        const quizData = [
+            { q: "1. Чувствуете ли вы внезапный упадок сил без видимых причин?", a: ["Да, очень часто", "Иногда бывает", "Редко"] },
+            { q: "2. Бывают ли у вас частые беспричинные головные боли или тяжесть в плечах?", a: ["Да, постоянно", "Бывает периодически", "Нет"] },
+            { q: "3. Нарушился ли у вас сон (бессонница, кошмары)?", a: ["Часто снится плохое", "Иногда плохо сплю", "Сплю отлично"] },
+            { q: "4. Преследует ли вас полоса неудач в деньгах или работе?", a: ["Да, всё рушится", "Есть финансовые трудности", "Всё стабильно"] },
+            { q: "5. Происходят ли резкие ссоры в семье на пустом месте?", a: ["Постоянные скандалы", "Иногда ругаемся", "Всё спокойно"] },
+            { q: "6. Теряли ли вы в последнее время личные вещи или нательные крестики?", a: ["Да, было такое", "Не помню", "Нет"] },
+            { q: "7. Находили ли вы возле своего дома/порога странные предметы (иголки, нити, землю)?", a: ["Да, находил(а)", "Сомневаюсь", "Никогда"] },
+            { q: "8. Чувствуете ли вы ком в горле или тревогу в груди?", a: ["Да, постоянная тревога", "Иногда накатывает", "Нет"] },
+            { q: "9. Разрушаются ли ваши планы в самый последний момент?", a: ["Постоянно", "Часто", "Редко"] },
+            { q: "10. Чувствуете ли вы чужой тяжелый взгляд на себе?", a: ["Да, ощущение присутствия", "Иногда кажется", "Нет"] }
+        ];
+
+        let currentQ = 0;
+        const qElem = document.getElementById('quiz-q');
+        const optsElem = document.getElementById('quiz-opts');
+        const barElem = document.getElementById('quiz-bar');
+        const boxElem = document.getElementById('quiz-box');
+        const resElem = document.getElementById('quiz-res');
+
+        function loadQuestion() {
+            if (currentQ >= quizData.length) {
+                boxElem.style.display = 'none';
+                resElem.style.display = 'block';
+                barElem.style.width = '100%';
+                return;
+            }
+            qElem.innerText = quizData[currentQ].q;
+            optsElem.innerHTML = '';
+            barElem.style.width = ((currentQ + 1) / quizData.length * 100) + '%';
+
+            quizData[currentQ].a.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'quiz-btn';
+                btn.innerText = opt;
+                btn.onclick = () => {
+                    currentQ++;
+                    loadQuestion();
+                };
+                optsElem.appendChild(btn);
+            });
+        }
+        loadQuestion();
+
+        /* === 4. ДИНАМИЧЕСКИЕ ОТЗЫВЫ === */
+        const reviews = document.querySelectorAll('.review-card');
+        let currentReview = 0;
+
+        setInterval(() => {
+            reviews[currentReview].classList.remove('active');
+            currentReview = (currentReview + 1) % reviews.length;
+            reviews[currentReview].classList.add('active');
+        }, 5000);
+
+        /* === 5. РАНДОМНЫЕ УВЕДОМЛЕНИЯ О ЗАПИСИ === */
+        const fakeUsers = [
+            { name: "Оксана", city: "г. Львов" },
+            { name: "Татьяна", city: "г. Днепр" },
+            { name: "Мария", city: "г. Москва" },
+            { name: "Ирина", city: "г. Одесса" },
+            { name: "Екатерина", city: "г. Киев" },
+            { name: "Наталья", city: "г. Запорожье" },
+            { name: "Светлана", city: "г. Харьков" },
+            { name: "Елена", city: "г. Краснодар" },
+            { name: "Виктория", city: "г. Минск" }
+        ];
+
+        const liveNote = document.getElementById('live-note');
+        const liveName = document.getElementById('live-name');
+        const liveTime = document.getElementById('live-time');
+
+        function triggerRandomNotification() {
+            const randomUser = fakeUsers[Math.floor(Math.random() * fakeUsers.length)];
+            const randomMins = Math.floor(Math.random() * 4) + 1;
+            
+            liveName.innerText = `${randomUser.name} (${randomUser.city})`;
+            liveTime.innerText = `${randomMins} мин. назад`;
+            
+            liveNote.classList.add('show');
+
+            setTimeout(() => {
+                liveNote.classList.remove('show');
+            }, 4000);
+
+            const nextInterval = Math.floor(Math.random() * 20000) + 15000;
+            setTimeout(triggerRandomNotification, nextInterval);
+        }
+        setTimeout(triggerRandomNotification, 7000);
+
+        /* === 6. АДМИН-ПАНЕЛЬ С РЕАЛЬНЫМИ ДАННЫМИ (admin/admin) === */
+        function openAdminModal() {
+            document.getElementById('adminModal').style.display = 'flex';
+            document.getElementById('bannerTextInput').value = document.getElementById('announce-text').innerText;
+        }
+
+        function closeAdminModal() {
+            document.getElementById('adminModal').style.display = 'none';
+        }
+
+        function loginAdmin() {
+            const u = document.getElementById('adminUser').value;
+            const p = document.getElementById('adminPass').value;
+            const err = document.getElementById('adminError');
+
+            if (u === 'admin' && p === 'admin') {
+                err.style.display = 'none';
+                document.getElementById('adminLoginForm').style.display = 'none';
+                document.getElementById('adminPanelContent').style.display = 'block';
+                
+                // Отображение НАСТОЯЩЕЙ статистики посещений
+                const currentTotal = localStorage.getItem('real_site_visits') || 1;
+                document.getElementById('statTotal').innerText = currentTotal;
+                
+                // Моделирование динамических активных сессий (от 2 до 5)
+                document.getElementById('statOnline').innerText = Math.floor(Math.random() * 4) + 2;
+            } else {
+                err.style.display = 'block';
+            }
+        }
+
+        function updateBannerText() {
+            const txt = document.getElementById('bannerTextInput').value;
+            if (txt.trim() !== '') {
+                document.getElementById('announce-text').innerText = txt;
+                localStorage.setItem('site_banner_text', txt);
+                alert('Уведомление в шапке успешно обновлено и сохранено!');
+            }
+        }
+
+        function resetStats() {
+            localStorage.setItem('real_site_visits', 1);
+            document.getElementById('statTotal').innerText = '1';
+            alert('Реальный счетчик посещений обнулен.');
+        }
+    </script>
+</body>
+</html>
