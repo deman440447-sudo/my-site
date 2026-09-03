@@ -43,7 +43,6 @@
             background: radial-gradient(circle at center, #13081e 0%, #040107 100%);
         }
 
-        /* ===== PORTAL OVERLAY ===== */
         #portal-overlay {
             position: fixed;
             top: 0;
@@ -175,7 +174,6 @@
             #portal-overlay .portal-title { font-size: 1.0rem; }
         }
 
-        /* ===== MOON PHASE ===== */
         #moon-phase {
             position: fixed;
             top: 90px;
@@ -207,7 +205,6 @@
             #moon-phase { font-size: 1.2rem; top: 68px; right: 8px; opacity: 0.3; }
         }
 
-        /* ===== TOP ANNOUNCE ===== */
         .top-announce-bar {
             background: linear-gradient(90deg, #4a154b, #8a1c1c, #4a154b);
             background-size: 200% 200%;
@@ -255,7 +252,6 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* ===== HEADER ===== */
         header {
             background: rgba(10, 4, 16, 0.92);
             backdrop-filter: blur(12px);
@@ -589,7 +585,6 @@
         }
         .wa-dropdown:hover .wa-dropdown-content { display: block; }
 
-        /* ===== APPOINTMENT MODAL ===== */
         .appointment-modal {
             display: none;
             position: fixed;
@@ -733,7 +728,6 @@
             padding: 20px 12px;
         }
 
-        /* ===== FADE SECTIONS ===== */
         .fade-section {
             opacity: 0;
             transform: translateY(40px) scale(0.97);
@@ -778,7 +772,6 @@
             margin-top: 4px;
         }
 
-        /* ===== MAGE PROFILE ===== */
         .mage-image-wrapper {
             flex: 1;
             min-width: 200px;
@@ -894,7 +887,6 @@
             font-size: 0.85rem;
         }
 
-        /* ===== GENTLE FLOAT ===== */
         @keyframes gentleFloat {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-5px); }
@@ -926,7 +918,6 @@
         .quiz-section { animation: gentleFloat 6s ease-in-out infinite; animation-delay: 0.9s; }
         .review-slider { animation: gentleFloat 6s ease-in-out infinite; animation-delay: 0.6s; }
 
-        /* ===== GALLERY ===== */
         .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -967,7 +958,6 @@
             font-family: 'Cinzel', serif;
         }
 
-        /* ===== SERVICES ===== */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1001,7 +991,6 @@
         .service-card h3 { font-size: 1.0rem; color: #fff; margin-bottom: 6px; }
         .service-card p { font-size: 0.78rem; color: #b8aacd; line-height: 1.4; }
 
-        /* ===== METHODS ===== */
         .methods-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1064,7 +1053,6 @@
             font-weight: 600;
         }
 
-        /* ===== QUIZ ===== */
         .quiz-section {
             background: linear-gradient(145deg, rgba(25, 12, 38, 0.95), rgba(10, 5, 16, 0.98));
             border: 1px solid #d4af37;
@@ -1133,7 +1121,6 @@
             line-height: 1.6;
         }
 
-        /* ===== REVIEWS ===== */
         .review-slider {
             position: relative;
             min-height: 160px;
@@ -1176,7 +1163,6 @@
             font-size: 0.7rem;
         }
 
-        /* ===== LIVE NOTIFICATION ===== */
         .live-notification {
             position: fixed;
             bottom: 16px;
@@ -1210,7 +1196,6 @@
         .live-text strong { color: #d4af37; }
         .live-text span { display: block; color: #8a7a9e; font-size: 0.65rem; }
 
-        /* ===== TOAST ===== */
         .toast-notification {
             position: fixed;
             bottom: 80px;
@@ -1241,7 +1226,9 @@
             font-size: 0.85rem;
         }
 
-        /* ===== ADMIN MODAL ===== */
+        /* ============================================================
+           ADMIN MODAL — полная система с ролями
+           ============================================================ */
         .admin-modal {
             display: none;
             position: fixed;
@@ -1262,7 +1249,7 @@
             border: 1px solid #d4af37;
             border-radius: 14px;
             width: 100%;
-            max-width: 750px;
+            max-width: 800px;
             max-height: 90vh;
             overflow-y: auto;
             padding: 24px 18px;
@@ -1346,6 +1333,16 @@
             color: #fff;
         }
         .admin-btn-danger:hover { background: #8a1a1a; }
+        .admin-btn-sm {
+            padding: 4px 12px;
+            font-size: 0.7rem;
+            width: auto;
+        }
+        .admin-btn-success {
+            background: #2ed573;
+            color: #fff;
+        }
+        .admin-btn-success:hover { background: #26b865; }
 
         .admin-panel-content { display: none; }
 
@@ -1387,8 +1384,9 @@
         }
         .discount-preview strong { color: #ffd700; }
 
+        /* === ЗАЯВКИ === */
         .requests-list {
-            max-height: 450px;
+            max-height: 350px;
             overflow-y: auto;
             margin-top: 10px;
             display: flex;
@@ -1587,6 +1585,145 @@
         .admin-header-indicator i {
             font-size: 0.5rem;
             color: #2ed573;
+        }
+
+        /* === ПОЛЬЗОВАТЕЛИ (в админке) === */
+        .users-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .user-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255,255,255,0.03);
+            padding: 10px 14px;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .user-item:hover {
+            border-color: rgba(212, 175, 55, 0.3);
+        }
+
+        .user-item .user-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .user-item .user-login {
+            color: #d4af37;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .user-item .user-role {
+            font-size: 0.65rem;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-weight: 600;
+        }
+
+        .user-role.superadmin {
+            background: rgba(212, 175, 55, 0.2);
+            color: #d4af37;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .user-role.admin {
+            background: rgba(52, 152, 219, 0.15);
+            color: #3498db;
+            border: 1px solid rgba(52, 152, 219, 0.2);
+        }
+
+        .user-role.moderator {
+            background: rgba(46, 213, 115, 0.15);
+            color: #2ed573;
+            border: 1px solid rgba(46, 213, 115, 0.2);
+        }
+
+        .user-item .user-actions {
+            display: flex;
+            gap: 6px;
+        }
+
+        .user-item .user-actions button {
+            background: none;
+            border: none;
+            color: #7a6b91;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: all 0.3s;
+            font-size: 0.75rem;
+        }
+
+        .user-item .user-actions button:hover {
+            color: #ff6b6b;
+            background: rgba(255, 107, 107, 0.1);
+        }
+
+        .user-item .user-actions button.edit-role:hover {
+            color: #3498db;
+            background: rgba(52, 152, 219, 0.1);
+        }
+
+        .add-user-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 12px;
+            padding: 12px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .add-user-form input,
+        .add-user-form select {
+            flex: 1;
+            min-width: 120px;
+            padding: 8px 12px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(186,131,255,0.2);
+            border-radius: 6px;
+            color: #fff;
+            font-family: inherit;
+            font-size: 0.8rem;
+        }
+
+        .add-user-form input:focus,
+        .add-user-form select:focus {
+            outline: none;
+            border-color: #d4af37;
+        }
+
+        .add-user-form select option {
+            background: #12081f;
+            color: #fff;
+        }
+
+        .add-user-form button {
+            padding: 8px 20px;
+            background: #2ed573;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.8rem;
+        }
+
+        .add-user-form button:hover {
+            background: #26b865;
+            transform: scale(1.02);
         }
 
         footer {
@@ -1885,85 +2022,31 @@
             border-color: #d4af37;
         }
 
-        /* ===== TAROT ADAPTIVE ===== */
         @media (max-width: 720px) {
-            .tarot-section {
-                padding: 20px 16px;
-            }
-            .tarot-card-item {
-                min-width: 120px;
-                max-width: 170px;
-                padding: 12px 8px;
-            }
-            .tarot-card-item .card-emoji {
-                font-size: 2rem;
-            }
-            .tarot-card-item .card-name {
-                font-size: 0.75rem;
-            }
-            .tarot-card-item .card-meaning {
-                font-size: 0.65rem;
-            }
-            .tarot-shuffle .shuffle-card-back {
-                width: 44px;
-                height: 68px;
-                font-size: 1.4rem;
-            }
-            .tarot-result .result-title {
-                font-size: 1.0rem;
-            }
-            .tarot-summary .summary-text {
-                font-size: 0.8rem;
-            }
-            .tarot-topic-btn {
-                font-size: 0.65rem;
-                padding: 6px 12px;
-            }
+            .tarot-section { padding: 20px 16px; }
+            .tarot-card-item { min-width: 120px; max-width: 170px; padding: 12px 8px; }
+            .tarot-card-item .card-emoji { font-size: 2rem; }
+            .tarot-card-item .card-name { font-size: 0.75rem; }
+            .tarot-card-item .card-meaning { font-size: 0.65rem; }
+            .tarot-shuffle .shuffle-card-back { width: 44px; height: 68px; font-size: 1.4rem; }
+            .tarot-result .result-title { font-size: 1.0rem; }
+            .tarot-summary .summary-text { font-size: 0.8rem; }
+            .tarot-topic-btn { font-size: 0.65rem; padding: 6px 12px; }
         }
 
         @media (max-width: 480px) {
-            .tarot-card-item {
-                min-width: 90px;
-                max-width: 130px;
-                padding: 10px 6px;
-            }
-            .tarot-card-item .card-emoji {
-                font-size: 1.6rem;
-            }
-            .tarot-card-item .card-name {
-                font-size: 0.65rem;
-            }
-            .tarot-card-item .card-meaning {
-                font-size: 0.55rem;
-            }
-            .tarot-cards-row {
-                gap: 10px;
-            }
-            .tarot-shuffle .shuffle-card-back {
-                width: 36px;
-                height: 54px;
-                font-size: 1rem;
-            }
-            .tarot-section {
-                padding: 16px 12px;
-            }
-            .tarot-topic-btn {
-                font-size: 0.55rem;
-                padding: 4px 10px;
-            }
-            .tarot-button {
-                font-size: 0.8rem;
-                padding: 10px;
-            }
-            .tarot-question-input {
-                font-size: 0.8rem;
-                padding: 8px 12px;
-            }
+            .tarot-card-item { min-width: 90px; max-width: 130px; padding: 10px 6px; }
+            .tarot-card-item .card-emoji { font-size: 1.6rem; }
+            .tarot-card-item .card-name { font-size: 0.65rem; }
+            .tarot-card-item .card-meaning { font-size: 0.55rem; }
+            .tarot-cards-row { gap: 10px; }
+            .tarot-shuffle .shuffle-card-back { width: 36px; height: 54px; font-size: 1rem; }
+            .tarot-section { padding: 16px 12px; }
+            .tarot-topic-btn { font-size: 0.55rem; padding: 4px 10px; }
+            .tarot-button { font-size: 0.8rem; padding: 10px; }
+            .tarot-question-input { font-size: 0.8rem; padding: 8px 12px; }
         }
 
-        /* ============================================================
-           RESPONSIVE OVERRIDES
-           ============================================================ */
         @media (max-width: 720px) {
             .admin-badge { font-size: 0.5rem !important; padding: 2px 6px !important; }
             .admin-header-indicator { font-size: 0.5rem; padding: 1px 8px 1px 4px; }
@@ -2023,10 +2106,14 @@
             .quiz-section, .review-slider, .section-title, .gallery-grid .gallery-item {
                 animation-duration: 8s;
             }
+            .add-user-form { flex-direction: column; }
+            .add-user-form input, .add-user-form select { min-width: auto; }
             @keyframes gentleFloat {
                 0%, 100% { transform: translateY(0px); }
                 50% { transform: translateY(-3px); }
             }
+            .user-item { flex-direction: column; align-items: flex-start; gap: 8px; }
+            .user-item .user-actions { width: 100%; justify-content: flex-start; }
         }
 
         @media (max-width: 480px) {
@@ -2048,7 +2135,7 @@
 </head>
 <body>
 
-    <!-- ===== PORTAL OVERLAY ===== -->
+    <!-- ===== PORTAL ===== -->
     <div id="portal-overlay">
         <div class="portal-bg"></div>
         <div class="portal-fog"></div>
@@ -2062,7 +2149,7 @@
 
     <canvas id="bg-canvas"></canvas>
 
-    <!-- ===== MOON PHASE ===== -->
+    <!-- ===== MOON ===== -->
     <div id="moon-phase" title="Фазы луны">🌕</div>
 
     <div class="top-announce-bar" id="announce-bar">
@@ -2132,7 +2219,7 @@
         </div>
     </header>
 
-    <!-- === APPOINTMENT MODAL === -->
+    <!-- ===== APPOINTMENT MODAL ===== -->
     <div class="appointment-modal" id="appointmentModal">
         <div class="appointment-box">
             <span class="appointment-close" onclick="closeAppointmentModal()">&times;</span>
@@ -2195,122 +2282,35 @@
         <h2 id="gallery" class="section-title fade-section">Атмосфера таинства и атрибуты</h2>
         <section class="gallery-section fade-section">
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="images/3.jpg" alt="Древние книги" onerror="this.onerror=null; this.src='3.jpg';">
-                    <div class="gallery-caption">Древние фолианты</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/4.jpg" alt="Магия луны" onerror="this.onerror=null; this.src='4.jpg';">
-                    <div class="gallery-caption">Лунные обряды</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/5.jpg" alt="Магический шар" onerror="this.onerror=null; this.src='5.jpg';">
-                    <div class="gallery-caption">Прозрение будущего</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/6.jpg" alt="Таро" onerror="this.onerror=null; this.src='6.jpg';">
-                    <div class="gallery-caption">Расклады судьбы</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/7.jpg" alt="Свечи" onerror="this.onerror=null; this.src='7.jpg';">
-                    <div class="gallery-caption">Очищение огнем</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/8.jpg" alt="Маятник" onerror="this.onerror=null; this.src='8.jpg';">
-                    <div class="gallery-caption">Работа с маятником</div>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/9.jpg" alt="Духовный проводник" onerror="this.onerror=null; this.src='9.jpg';">
-                    <div class="gallery-caption">Связь с предками</div>
-                </div>
+                <div class="gallery-item"><img src="images/3.jpg" alt="Древние книги" onerror="this.onerror=null; this.src='3.jpg';"><div class="gallery-caption">Древние фолианты</div></div>
+                <div class="gallery-item"><img src="images/4.jpg" alt="Магия луны" onerror="this.onerror=null; this.src='4.jpg';"><div class="gallery-caption">Лунные обряды</div></div>
+                <div class="gallery-item"><img src="images/5.jpg" alt="Магический шар" onerror="this.onerror=null; this.src='5.jpg';"><div class="gallery-caption">Прозрение будущего</div></div>
+                <div class="gallery-item"><img src="images/6.jpg" alt="Таро" onerror="this.onerror=null; this.src='6.jpg';"><div class="gallery-caption">Расклады судьбы</div></div>
+                <div class="gallery-item"><img src="images/7.jpg" alt="Свечи" onerror="this.onerror=null; this.src='7.jpg';"><div class="gallery-caption">Очищение огнем</div></div>
+                <div class="gallery-item"><img src="images/8.jpg" alt="Маятник" onerror="this.onerror=null; this.src='8.jpg';"><div class="gallery-caption">Работа с маятником</div></div>
+                <div class="gallery-item"><img src="images/9.jpg" alt="Духовный проводник" onerror="this.onerror=null; this.src='9.jpg';"><div class="gallery-caption">Связь с предками</div></div>
             </div>
         </section>
 
         <h2 id="services" class="section-title fade-section">Виды гаданий и ритуалов</h2>
         <section class="services-grid fade-section">
-            <div class="service-card">
-                <i class="fa-solid fa-eye service-icon"></i>
-                <h3>Ясновидение</h3>
-                <p>Просмотр по фото, Таро и маятнику.</p>
-            </div>
-            <div class="service-card">
-                <i class="fa-solid fa-heart-broken service-icon"></i>
-                <h3>Любовные связки</h3>
-                <p>Возврат, приворот, гармония.</p>
-            </div>
-            <div class="service-card">
-                <i class="fa-solid fa-shield-halved service-icon"></i>
-                <h3>Снятие негатива</h3>
-                <p>Порчи, проклятия, венец безбрачия.</p>
-            </div>
-            <div class="service-card">
-                <i class="fa-solid fa-coins service-icon"></i>
-                <h3>Денежный поток</h3>
-                <p>Открытие каналов богатства.</p>
-            </div>
+            <div class="service-card"><i class="fa-solid fa-eye service-icon"></i><h3>Ясновидение</h3><p>Просмотр по фото, Таро и маятнику.</p></div>
+            <div class="service-card"><i class="fa-solid fa-heart-broken service-icon"></i><h3>Любовные связки</h3><p>Возврат, приворот, гармония.</p></div>
+            <div class="service-card"><i class="fa-solid fa-shield-halved service-icon"></i><h3>Снятие негатива</h3><p>Порчи, проклятия, венец безбрачия.</p></div>
+            <div class="service-card"><i class="fa-solid fa-coins service-icon"></i><h3>Денежный поток</h3><p>Открытие каналов богатства.</p></div>
         </section>
 
         <h2 id="methods" class="section-title fade-section">🍀 6 Уникальных методик лечения</h2>
         <section class="methods-section fade-section">
             <div class="methods-grid">
-                <div class="method-card">
-                    <span class="method-number">01</span>
-                    <h3><i class="fa-solid fa-sun"></i> Славянская</h3>
-                    <ul>
-                        <li>Работа с родовой силой.</li>
-                        <li>Очищение от негатива.</li>
-                        <li>Восстановление жизненных сил.</li>
-                    </ul>
-                </div>
-                <div class="method-card">
-                    <span class="method-number">02</span>
-                    <h3><i class="fa-solid fa-kaaba"></i> Кораническая</h3>
-                    <ul>
-                        <li>Чтение аятов для защиты.</li>
-                        <li>Избавление от джиннов.</li>
-                        <li>Открытие дорог и благословение.</li>
-                    </ul>
-                </div>
-                <div class="method-card">
-                    <span class="method-number">03</span>
-                    <h3><i class="fa-solid fa-cross"></i> Иерусалимская</h3>
-                    <ul>
-                        <li>Энергия святых мест.</li>
-                        <li>Защита дома и семьи.</li>
-                        <li>Исцеление души и тела.</li>
-                    </ul>
-                </div>
-                <div class="method-card">
-                    <span class="method-number">04</span>
-                    <h3><i class="fa-solid fa-hat-wizard"></i> Венгерская</h3>
-                    <ul>
-                        <li>Заклинания на удачу.</li>
-                        <li>Привлечение денег и любви.</li>
-                        <li>Снятие сильных порч.</li>
-                    </ul>
-                </div>
-                <div class="method-card">
-                    <span class="method-number">05</span>
-                    <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Белая магия</h3>
-                    <ul>
-                        <li>Добрые ритуалы во благо.</li>
-                        <li>Гармонизация отношений.</li>
-                        <li>Исполнение желаний.</li>
-                    </ul>
-                </div>
-                <div class="method-card">
-                    <span class="method-number">06</span>
-                    <h3><i class="fa-solid fa-mountain"></i> Мольфарская</h3>
-                    <ul>
-                        <li>Сила природы и стихий.</li>
-                        <li>Диагностика и лечение.</li>
-                        <li>Обряды на все случаи.</li>
-                    </ul>
-                </div>
+                <div class="method-card"><span class="method-number">01</span><h3><i class="fa-solid fa-sun"></i> Славянская</h3><ul><li>Работа с родовой силой.</li><li>Очищение от негатива.</li><li>Восстановление жизненных сил.</li></ul></div>
+                <div class="method-card"><span class="method-number">02</span><h3><i class="fa-solid fa-kaaba"></i> Кораническая</h3><ul><li>Чтение аятов для защиты.</li><li>Избавление от джиннов.</li><li>Открытие дорог и благословение.</li></ul></div>
+                <div class="method-card"><span class="method-number">03</span><h3><i class="fa-solid fa-cross"></i> Иерусалимская</h3><ul><li>Энергия святых мест.</li><li>Защита дома и семьи.</li><li>Исцеление души и тела.</li></ul></div>
+                <div class="method-card"><span class="method-number">04</span><h3><i class="fa-solid fa-hat-wizard"></i> Венгерская</h3><ul><li>Заклинания на удачу.</li><li>Привлечение денег и любви.</li><li>Снятие сильных порч.</li></ul></div>
+                <div class="method-card"><span class="method-number">05</span><h3><i class="fa-solid fa-wand-magic-sparkles"></i> Белая магия</h3><ul><li>Добрые ритуалы во благо.</li><li>Гармонизация отношений.</li><li>Исполнение желаний.</li></ul></div>
+                <div class="method-card"><span class="method-number">06</span><h3><i class="fa-solid fa-mountain"></i> Мольфарская</h3><ul><li>Сила природы и стихий.</li><li>Диагностика и лечение.</li><li>Обряды на все случаи.</li></ul></div>
             </div>
-            <div class="methods-footer-quote">
-                «Ваша жизнь в ваших руках — я лишь помогаю сделать правильный выбор.»
-            </div>
+            <div class="methods-footer-quote">«Ваша жизнь в ваших руках — я лишь помогаю сделать правильный выбор.»</div>
         </section>
 
         <section id="quiz" class="quiz-section fade-section">
@@ -2318,9 +2318,7 @@
             <p style="text-align: center; color: #b8aacd; margin-bottom: 18px; font-size:0.85rem;">Ответьте на 10 вопросов, чтобы определить наличие скрытого негатива.</p>
             
             <div class="quiz-container">
-                <div class="quiz-progress">
-                    <div class="quiz-progress-bar" id="quiz-bar"></div>
-                </div>
+                <div class="quiz-progress"><div class="quiz-progress-bar" id="quiz-bar"></div></div>
                 <div id="quiz-box">
                     <div class="quiz-question" id="quiz-q">Загрузка вопроса...</div>
                     <div class="quiz-options" id="quiz-opts"></div>
@@ -2336,15 +2334,12 @@
             </div>
         </section>
 
-        <!-- ============================================================
-             TAROT SECTION
-             ============================================================ -->
+        <!-- ===== TAROT ===== -->
         <section id="tarot" class="tarot-section fade-section">
             <h2 class="section-title" style="margin-bottom: 12px;">🔮 Гадание на Таро</h2>
             <p style="text-align: center; color: #b8aacd; margin-bottom: 18px; font-size:0.85rem;">Выберите сферу жизни, задайте вопрос и получите предсказание от древних Арканов.</p>
             
             <div class="tarot-container">
-                <!-- Выбор темы -->
                 <div class="tarot-topic-selector" id="tarotTopics">
                     <button class="tarot-topic-btn active" data-topic="love">❤️ Любовь</button>
                     <button class="tarot-topic-btn" data-topic="money">💰 Деньги</button>
@@ -2354,13 +2349,10 @@
                     <button class="tarot-topic-btn" data-topic="general">🌌 Общий</button>
                 </div>
 
-                <!-- Вопрос -->
                 <input type="text" class="tarot-question-input" id="tarotQuestion" placeholder="Ваш вопрос (необязательно, но усиливает магию...)">
 
-                <!-- Кнопка -->
                 <button class="tarot-button" id="tarotButton">🔮 Получить предсказание</button>
 
-                <!-- Анимация тасования -->
                 <div class="tarot-shuffle" id="tarotShuffle">
                     <div class="shuffle-text">✦ Карты тасуются... ✦</div>
                     <div class="shuffle-cards">
@@ -2372,7 +2364,6 @@
                     </div>
                 </div>
 
-                <!-- Результат -->
                 <div class="tarot-result" id="tarotResult">
                     <div class="result-title">✦ Ваш расклад ✦</div>
                     <div class="tarot-cards-row" id="tarotCards"></div>
@@ -2388,22 +2379,10 @@
         <h2 id="reviews" class="section-title fade-section">Отзывы людей</h2>
         <section class="reviews-section fade-section">
             <div class="review-slider">
-                <div class="review-card active">
-                    <div class="review-text">«Эдуард Владимирович — единственный, кто реально помог вернуть мужа в семью спустя полгода разлуки. Результат проявился на 7-й день после обряда. Низкий вам поклон!»</div>
-                    <div class="review-author">Ольга, г. Киев <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
-                </div>
-                <div class="review-card">
-                    <div class="review-text">«Обращалась с проблемой сильного негатива и постоянных болезней. Эдуард сразу сказал то, о чем никто кроме меня не знал. После чистки как будто заново родилась!»</div>
-                    <div class="review-author">Елена, г. Москва <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
-                </div>
-                <div class="review-card">
-                    <div class="review-text">«Сильнейший мольфар! Помог открыть денежный поток в бизнесе, когда я уже стоял на грани банкротства. Все сработало строго так, как он обещал. Спасибо!»</div>
-                    <div class="review-author">Михаил, г. Одесса <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
-                </div>
-                <div class="review-card">
-                    <div class="review-text">«Писала из Германии. Очень переживала, так как работали дистанционно. Но Эдуард Владимирович доказал свой дар на деле. Невероятный человек!»</div>
-                    <div class="review-author">Ирина, г. Берлин <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div>
-                </div>
+                <div class="review-card active"><div class="review-text">«Эдуард Владимирович — единственный, кто реально помог вернуть мужа в семью спустя полгода разлуки. Результат проявился на 7-й день после обряда. Низкий вам поклон!»</div><div class="review-author">Ольга, г. Киев <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div></div>
+                <div class="review-card"><div class="review-text">«Обращалась с проблемой сильного негатива и постоянных болезней. Эдуард сразу сказал то, о чем никто кроме меня не знал. После чистки как будто заново родилась!»</div><div class="review-author">Елена, г. Москва <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div></div>
+                <div class="review-card"><div class="review-text">«Сильнейший мольфар! Помог открыть денежный поток в бизнесе, когда я уже стоял на грани банкротства. Все сработало строго так, как он обещал. Спасибо!»</div><div class="review-author">Михаил, г. Одесса <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div></div>
+                <div class="review-card"><div class="review-text">«Писала из Германии. Очень переживала, так как работали дистанционно. Но Эдуард Владимирович доказал свой дар на деле. Невероятный человек!»</div><div class="review-author">Ирина, г. Берлин <div class="review-stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div></div></div>
             </div>
         </section>
 
@@ -2417,7 +2396,9 @@
         </div>
     </div>
 
-    <!-- === ADMIN MODAL === -->
+    <!-- ============================================================
+         ADMIN MODAL — полная система с ролями
+         ============================================================ -->
     <div class="admin-modal" id="adminModal">
         <div class="admin-box">
             <span class="admin-close" onclick="closeAdminModal()">&times;</span>
@@ -2425,8 +2406,8 @@
             <div id="adminLoginForm">
                 <h2 style="color:#d4af37; margin-bottom: 16px; text-align:center; font-size:1.2rem;">🔐 Вход в Панель</h2>
                 <div class="admin-form">
-                    <input type="text" id="adminUser" placeholder="Логин" value="admin">
-                    <input type="password" id="adminPass" placeholder="Пароль" value="admin">
+                    <input type="text" id="adminUser" placeholder="Логин">
+                    <input type="password" id="adminPass" placeholder="Пароль">
                     <button class="admin-btn" onclick="loginAdmin()">Войти</button>
                     <p id="adminError" style="color:#ff5555; font-size:0.8rem; margin-top:8px; display:none; text-align:center;">Неверный логин или пароль!</p>
                 </div>
@@ -2446,11 +2427,15 @@
                     <div class="admin-tab" data-tab="tab-settings" onclick="switchTab('tab-settings')">
                         <i class="fa-solid fa-sliders-h"></i> Настройки
                     </div>
+                    <div class="admin-tab" data-tab="tab-users" onclick="switchTab('tab-users')">
+                        <i class="fa-solid fa-users"></i> Пользователи
+                    </div>
                     <div class="admin-tab" data-tab="tab-stats" onclick="switchTab('tab-stats')">
                         <i class="fa-solid fa-chart-line"></i> Статистика
                     </div>
                 </div>
 
+                <!-- ===== ЗАЯВКИ ===== -->
                 <div class="admin-tab-content active" id="tab-requests">
                     <div class="stat-card">
                         <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;">
@@ -2463,14 +2448,12 @@
                             </div>
                         </div>
                         <div class="requests-list" id="requestsList">
-                            <div class="request-empty">
-                                <i class="fa-solid fa-inbox"></i>
-                                Пока нет заявок
-                            </div>
+                            <div class="request-empty"><i class="fa-solid fa-inbox"></i>Пока нет заявок</div>
                         </div>
                     </div>
                 </div>
 
+                <!-- ===== НАСТРОЙКИ ===== -->
                 <div class="admin-tab-content" id="tab-settings">
                     <div class="stat-card">
                         <h4 style="font-size:0.85rem;"><i class="fa-solid fa-bullhorn"></i> Текст в верхнем баннере:</h4>
@@ -2508,6 +2491,31 @@
                     </div>
                 </div>
 
+                <!-- ===== ПОЛЬЗОВАТЕЛИ ===== -->
+                <div class="admin-tab-content" id="tab-users">
+                    <div class="stat-card">
+                        <h4 style="font-size:0.85rem;"><i class="fa-solid fa-users"></i> Управление пользователями</h4>
+                        
+                        <!-- Форма добавления -->
+                        <div class="add-user-form" id="addUserForm">
+                            <input type="text" id="newUserLogin" placeholder="Логин" required>
+                            <input type="password" id="newUserPass" placeholder="Пароль" required>
+                            <select id="newUserRole">
+                                <option value="moderator">Модератор</option>
+                                <option value="admin">Администратор</option>
+                                <option value="superadmin">Супер-админ</option>
+                            </select>
+                            <button onclick="addUser()">➕ Добавить</button>
+                        </div>
+
+                        <!-- Список пользователей -->
+                        <div class="users-list" id="usersList">
+                            <div class="request-empty"><i class="fa-solid fa-users"></i>Загрузка...</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== СТАТИСТИКА ===== -->
                 <div class="admin-tab-content" id="tab-stats">
                     <div class="stat-card">
                         <h4 style="font-size:0.85rem;"><i class="fa-solid fa-chart-line"></i> Статистика сайта</h4>
@@ -2536,7 +2544,7 @@
         document.addEventListener('DOMContentLoaded', function() {
 
             // ============================================================
-            //  PORTAL OVERLAY
+            //  ПОРТАЛ
             // ============================================================
             const portal = document.getElementById('portal-overlay');
             setTimeout(() => {
@@ -2545,7 +2553,7 @@
             }, 2800);
 
             // ============================================================
-            //  MOON PHASE
+            //  ЛУНА
             // ============================================================
             const moonPhases = ['🌑', '🌒', '🌓', '🌔', '🌕', '🌖', '🌗', '🌘'];
             let moonIndex = 0;
@@ -2564,7 +2572,7 @@
             }, 6000);
 
             // ============================================================
-            //  FADE SECTIONS
+            //  ПЛАВНОЕ ПОЯВЛЕНИЕ
             // ============================================================
             const fadeElements = document.querySelectorAll('.fade-section');
             const observer = new IntersectionObserver((entries) => {
@@ -2577,182 +2585,247 @@
             fadeElements.forEach(el => observer.observe(el));
 
             // ============================================================
-            //  TAROT — ГАДАНИЕ НА 15 КАРТАХ
+            //  СИСТЕМА РОЛЕЙ И ПОЛЬЗОВАТЕЛЕЙ
             // ============================================================
-            const tarotDeck = [
-                { name: 'Маг', emoji: '🧙', meaning: 'Сила воли, начало дела, уверенность', reversed: 'Неуверенность, слабость, манипуляции' },
-                { name: 'Жрица', emoji: '🌙', meaning: 'Интуиция, тайны, внутренний голос', reversed: 'Скрытое, отрицание, ложные знаки' },
-                { name: 'Императрица', emoji: '👑', meaning: 'Рост, изобилие, плодородие', reversed: 'Застой, бесплодие, творческий кризис' },
-                { name: 'Император', emoji: '🏛️', meaning: 'Власть, порядок, защита', reversed: 'Тирания, хаос, злоупотребление властью' },
-                { name: 'Иерофант', emoji: '📜', meaning: 'Мудрость, традиции, наставник', reversed: 'Бунт, разрыв с традициями, упрямство' },
-                { name: 'Влюблённые', emoji: '💞', meaning: 'Любовь, выбор, гармония', reversed: 'Конфликт, разрыв, неверный выбор' },
-                { name: 'Колесница', emoji: '🏇', meaning: 'Движение вперёд, победа, целеустремлённость', reversed: 'Поражение, пауза, потеря контроля' },
-                { name: 'Справедливость', emoji: '⚖️', meaning: 'Честность, правда, закон', reversed: 'Ложь, несправедливость, обман' },
-                { name: 'Отшельник', emoji: '🕯️', meaning: 'Уединение, мудрость, поиск истины', reversed: 'Одиночество, изоляция, страх' },
-                { name: 'Колесо Фортуны', emoji: '🎡', meaning: 'Удача, перемены, судьба', reversed: 'Неудача, застой, сопротивление переменам' },
-                { name: 'Сила', emoji: '🦁', meaning: 'Внутренняя мощь, смелость, терпение', reversed: 'Страх, слабость, потеря контроля' },
-                { name: 'Повешенный', emoji: '🙃', meaning: 'Жертва ради цели, новый взгляд', reversed: 'Тщетность, пассивность, бесполезные жертвы' },
-                { name: 'Смерть', emoji: '💀', meaning: 'Трансформация, конец и начало', reversed: 'Застой, сопротивление изменениям' },
-                { name: 'Звезда', emoji: '⭐', meaning: 'Надежда, свет, вдохновение', reversed: 'Отчаяние, потеря веры, разочарование' },
-                { name: 'Солнце', emoji: '☀️', meaning: 'Победа, радость, успех', reversed: 'Эго, отчаяние, излишняя самоуверенность' }
-            ];
-
-            // === Сборщик тем ===
-            const topicMap = {
-                love: ['отношения', 'любви', 'сердце'],
-                money: ['деньги', 'карьеру', 'бизнес'],
-                health: ['здоровье', 'энергию', 'самочувствие'],
-                family: ['семью', 'дом', 'род'],
-                growth: ['развитие', 'душу', 'себя'],
-                general: ['жизнь', 'путь', 'судьбу']
-            };
-
-            let selectedTopic = 'love';
-            let isTarotReady = true;
-
-            // === Выбор темы ===
-            document.querySelectorAll('.tarot-topic-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    document.querySelectorAll('.tarot-topic-btn').forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    selectedTopic = this.dataset.topic;
-                });
-            });
-
-            // === Основная функция гадания ===
-            document.getElementById('tarotButton').addEventListener('click', function() {
-                if (!isTarotReady) return;
-                isTarotReady = false;
-                this.disabled = true;
-
-                // Скрыть старый результат
-                const resultEl = document.getElementById('tarotResult');
-                resultEl.style.display = 'none';
-
-                // Показать тасование
-                const shuffleEl = document.getElementById('tarotShuffle');
-                shuffleEl.style.display = 'block';
-
-                // Через 2 секунды — результат
-                setTimeout(() => {
-                    shuffleEl.style.display = 'none';
-                    resultEl.style.display = 'block';
-                    generateTarotReading();
-                    isTarotReady = true;
-                    document.getElementById('tarotButton').disabled = false;
-                }, 2200);
-            });
-
-            function generateTarotReading() {
-                const cards = document.getElementById('tarotCards');
-                const summary = document.getElementById('tarotSummary');
-
-                // Выбираем 3 разные карты
-                const shuffled = [...tarotDeck];
-                for (let i = shuffled.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            // === БАЗОВЫЙ ПОЛЬЗОВАТЕЛЬ (СУПЕР-АДМИН) ===
+            function initUsers() {
+                if (!localStorage.getItem('app_users')) {
+                    const defaultUsers = [
+                        { login: 'admin', password: 'admin', role: 'superadmin' }
+                    ];
+                    localStorage.setItem('app_users', JSON.stringify(defaultUsers));
                 }
-                const selected = shuffled.slice(0, 3);
+            }
+            initUsers();
 
-                // Определяем перевёрнутые (30%)
-                const positions = ['Прошлое', 'Настоящее', 'Будущее'];
-                let html = '';
-                let meanings = [];
+            // === ТЕКУЩАЯ СЕССИЯ ===
+            let currentUser = null;
+            const sessionData = localStorage.getItem('app_session');
+            if (sessionData) {
+                try {
+                    currentUser = JSON.parse(sessionData);
+                } catch(e) {
+                    currentUser = null;
+                }
+            }
 
-                selected.forEach((card, index) => {
-                    const isReversed = Math.random() < 0.3;
-                    const meaning = isReversed ? card.reversed : card.meaning;
-                    meanings.push(meaning);
-                    html += `
-                        <div class="tarot-card-item" style="transition-delay: ${index * 0.3}s">
-                            <div class="card-position">${positions[index]}</div>
-                            <span class="card-emoji">${card.emoji}</span>
-                            <div class="card-name">${card.name} ${isReversed ? '🔄' : ''}</div>
-                            <div class="card-meaning">${meaning}</div>
-                            ${isReversed ? '<span class="card-reversed">⟳ Перевёрнутый Аркан</span>' : ''}
+            // === ПРОВЕРКА ПРАВ ===
+            function hasPermission(requiredRole) {
+                if (!currentUser) return false;
+                const roleLevel = { 'moderator': 1, 'admin': 2, 'superadmin': 3 };
+                return roleLevel[currentUser.role] >= roleLevel[requiredRole];
+            }
+
+            // === ПОЛУЧИТЬ ВСЕХ ПОЛЬЗОВАТЕЛЕЙ ===
+            function getUsers() {
+                return JSON.parse(localStorage.getItem('app_users') || '[]');
+            }
+
+            // === СОХРАНИТЬ ПОЛЬЗОВАТЕЛЕЙ ===
+            function saveUsers(users) {
+                localStorage.setItem('app_users', JSON.stringify(users));
+            }
+
+            // === ОТОБРАЗИТЬ СПИСОК ПОЛЬЗОВАТЕЛЕЙ ===
+            function renderUsers() {
+                const list = document.getElementById('usersList');
+                const users = getUsers();
+                const currentLogin = currentUser ? currentUser.login : null;
+
+                if (users.length === 0) {
+                    list.innerHTML = '<div class="request-empty"><i class="fa-solid fa-users"></i>Нет пользователей</div>';
+                    return;
+                }
+
+                list.innerHTML = users.map(u => {
+                    const isCurrent = u.login === currentLogin;
+                    const roleLabels = {
+                        'superadmin': '<span class="user-role superadmin">👑 Супер-админ</span>',
+                        'admin': '<span class="user-role admin">⚙️ Администратор</span>',
+                        'moderator': '<span class="user-role moderator">🛡️ Модератор</span>'
+                    };
+                    return `
+                        <div class="user-item">
+                            <div class="user-info">
+                                <span class="user-login">${u.login} ${isCurrent ? '⭐' : ''}</span>
+                                ${roleLabels[u.role] || '<span class="user-role">❓</span>'}
+                                ${isCurrent ? '<span style="font-size:0.6rem; color:#7a6b91;">(вы)</span>' : ''}
+                            </div>
+                            <div class="user-actions">
+                                ${!isCurrent && hasPermission('superadmin') ? `
+                                    <select class="req-status-select" onchange="changeUserRole('${u.login}', this.value)" style="font-size:0.6rem;">
+                                        <option value="moderator" ${u.role === 'moderator' ? 'selected' : ''}>Модератор</option>
+                                        <option value="admin" ${u.role === 'admin' ? 'selected' : ''}>Администратор</option>
+                                        <option value="superadmin" ${u.role === 'superadmin' ? 'selected' : ''}>Супер-админ</option>
+                                    </select>
+                                    <button class="req-delete-btn" onclick="deleteUser('${u.login}')" title="Удалить пользователя">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </button>
+                                ` : ''}
+                            </div>
                         </div>
                     `;
-                });
-
-                cards.innerHTML = html;
-
-                // Анимация появления
-                setTimeout(() => {
-                    document.querySelectorAll('.tarot-card-item').forEach(el => {
-                        el.classList.add('revealed');
-                    });
-                }, 100);
-
-                // === Генерация вывода ===
-                const topic = topicMap[selectedTopic] || ['жизнь'];
-                const topicWord = topic[0];
-
-                const introPhrases = [
-                    `Арканы говорят о вашем <i>${topicWord}</i>.`,
-                    `Сила карт раскрывает тайны вашего <i>${topicWord}</i>.`,
-                    `Древние знаки указывают на ваш <i>${topicWord}</i>.`
-                ];
-
-                const connectionPhrases = [
-                    `Прошлое привело вас к текущему моменту, а будущее открывается через <i>${meanings[2].toLowerCase()}</i>.`,
-                    `Вы прошли через <i>${meanings[0].toLowerCase()}</i>, сейчас важно <i>${meanings[1].toLowerCase()}</i>, а впереди вас ждёт <i>${meanings[2].toLowerCase()}</i>.`,
-                    `Ваш путь: от <i>${meanings[0].toLowerCase()}</i> через <i>${meanings[1].toLowerCase()}</i> к <i>${meanings[2].toLowerCase()}</i>.`
-                ];
-
-                const advicePhrases = [
-                    `Слушайте интуицию и доверяйте процессу.`,
-                    `Будьте честны с собой и окружающими.`,
-                    `Не бойтесь перемен — они ведут к росту.`,
-                    `Внутренняя сила уже есть у вас — просто позвольте ей проявиться.`,
-                    `Ваше сердце знает правильный путь.`
-                ];
-
-                const final = `${introPhrases[Math.floor(Math.random() * introPhrases.length)]} ${connectionPhrases[Math.floor(Math.random() * connectionPhrases.length)]} ${advicePhrases[Math.floor(Math.random() * advicePhrases.length)]}`;
-
-                summary.innerHTML = `✨ ${final} ✨`;
+                }).join('');
             }
 
-            // === Сброс ===
-            window.resetTarot = function() {
-                document.getElementById('tarotResult').style.display = 'none';
-                document.getElementById('tarotQuestion').value = '';
-                document.getElementById('tarotCards').innerHTML = '';
-                document.getElementById('tarotSummary').innerHTML = 'Магическая сила арканов говорит с вами...';
-                isTarotReady = true;
-                document.getElementById('tarotButton').disabled = false;
+            // === ДОБАВИТЬ ПОЛЬЗОВАТЕЛЯ ===
+            window.addUser = function() {
+                if (!hasPermission('superadmin')) {
+                    alert('⛔ Только супер-админ может добавлять пользователей!');
+                    return;
+                }
+
+                const login = document.getElementById('newUserLogin').value.trim();
+                const password = document.getElementById('newUserPass').value.trim();
+                const role = document.getElementById('newUserRole').value;
+
+                if (!login || !password) {
+                    alert('Заполните логин и пароль!');
+                    return;
+                }
+
+                const users = getUsers();
+                if (users.find(u => u.login === login)) {
+                    alert('❌ Пользователь с таким логином уже существует!');
+                    return;
+                }
+
+                users.push({ login, password, role });
+                saveUsers(users);
+                renderUsers();
+
+                document.getElementById('newUserLogin').value = '';
+                document.getElementById('newUserPass').value = '';
+                alert('✅ Пользователь добавлен!');
+            };
+
+            // === УДАЛИТЬ ПОЛЬЗОВАТЕЛЯ ===
+            window.deleteUser = function(login) {
+                if (!hasPermission('superadmin')) {
+                    alert('⛔ Только супер-админ может удалять пользователей!');
+                    return;
+                }
+
+                if (login === currentUser.login) {
+                    alert('❌ Нельзя удалить самого себя!');
+                    return;
+                }
+
+                if (!confirm(`Удалить пользователя "${login}"?`)) return;
+
+                let users = getUsers();
+                users = users.filter(u => u.login !== login);
+                saveUsers(users);
+                renderUsers();
+                alert('✅ Пользователь удалён!');
+            };
+
+            // === ИЗМЕНИТЬ РОЛЬ ===
+            window.changeUserRole = function(login, newRole) {
+                if (!hasPermission('superadmin')) {
+                    alert('⛔ Только супер-админ может менять роли!');
+                    return;
+                }
+
+                if (login === currentUser.login) {
+                    alert('❌ Нельзя менять роль самому себе!');
+                    return;
+                }
+
+                let users = getUsers();
+                const user = users.find(u => u.login === login);
+                if (user) {
+                    user.role = newRole;
+                    saveUsers(users);
+                    renderUsers();
+                    alert('✅ Роль изменена!');
+                }
             };
 
             // ============================================================
-            //  ADMIN SESSION
+            //  АВТОРИЗАЦИЯ
             // ============================================================
-            const isAdmin = localStorage.getItem('admin_session') === 'true';
-            if (isAdmin) {
-                applyAdminMode();
-                document.getElementById('adminIndicator').style.display = 'inline-flex';
-                document.getElementById('adminLoginText').textContent = 'Выйти';
-                const adminOpen = sessionStorage.getItem('admin_open') === 'true';
-                if (adminOpen) openAdminModal();
-            }
+            window.loginAdmin = function() {
+                const login = document.getElementById('adminUser').value.trim();
+                const password = document.getElementById('adminPass').value.trim();
+                const err = document.getElementById('adminError');
 
-            function applyAdminMode() {
-                document.body.classList.add('admin-mode');
-                const loginBtn = document.querySelector('.btn-admin-login');
-                if (loginBtn) {
-                    loginBtn.innerHTML = '<i class="fa-solid fa-user-shield"></i> <span id="adminLoginText">Выйти</span>';
+                if (!login || !password) {
+                    err.style.display = 'block';
+                    err.textContent = 'Заполните все поля!';
+                    return;
                 }
-                document.getElementById('adminIndicator').style.display = 'inline-flex';
-            }
+
+                const users = getUsers();
+                const user = users.find(u => u.login === login && u.password === password);
+
+                if (user) {
+                    err.style.display = 'none';
+                    currentUser = user;
+                    localStorage.setItem('app_session', JSON.stringify(user));
+
+                    document.getElementById('adminLoginForm').style.display = 'none';
+                    document.getElementById('adminPanelContent').style.display = 'block';
+
+                    // Обновляем интерфейс
+                    document.getElementById('adminIndicator').style.display = 'inline-flex';
+                    document.getElementById('adminLoginText').textContent = 'Выйти';
+                    document.querySelector('.btn-admin-login').innerHTML = '<i class="fa-solid fa-user-shield"></i> <span id="adminLoginText">Выйти</span>';
+
+                    renderUsers();
+                    loadRequests();
+
+                    const currentTotal = localStorage.getItem('real_site_visits') || 1;
+                    document.getElementById('statTotal').innerText = currentTotal;
+                    document.getElementById('statOnline').innerText = Math.floor(Math.random() * 4) + 2;
+
+                    // Скрываем кнопку добавления для модераторов
+                    if (!hasPermission('superadmin')) {
+                        const addForm = document.getElementById('addUserForm');
+                        if (addForm) addForm.style.display = 'none';
+                    }
+
+                } else {
+                    err.style.display = 'block';
+                    err.textContent = '❌ Неверный логин или пароль!';
+                }
+            };
 
             window.logoutAdmin = function() {
-                localStorage.removeItem('admin_session');
-                sessionStorage.removeItem('admin_open');
+                localStorage.removeItem('app_session');
+                currentUser = null;
                 document.getElementById('adminIndicator').style.display = 'none';
                 document.getElementById('adminLoginText').textContent = 'Вход';
                 document.querySelector('.btn-admin-login').innerHTML = '<i class="fa-solid fa-lock"></i> <span id="adminLoginText">Вход</span>';
                 closeAdminModal();
                 document.body.classList.remove('admin-mode');
                 location.reload();
+            };
+
+            window.openAdminModal = function() {
+                if (currentUser) {
+                    document.getElementById('adminModal').style.display = 'flex';
+                    document.getElementById('adminLoginForm').style.display = 'none';
+                    document.getElementById('adminPanelContent').style.display = 'block';
+                    renderUsers();
+                    loadRequests();
+                    const currentTotal = localStorage.getItem('real_site_visits') || 1;
+                    document.getElementById('statTotal').innerText = currentTotal;
+                    document.getElementById('statOnline').innerText = Math.floor(Math.random() * 4) + 2;
+
+                    if (!hasPermission('superadmin')) {
+                        const addForm = document.getElementById('addUserForm');
+                        if (addForm) addForm.style.display = 'none';
+                    }
+                } else {
+                    document.getElementById('adminModal').style.display = 'flex';
+                    document.getElementById('adminLoginForm').style.display = 'block';
+                    document.getElementById('adminPanelContent').style.display = 'none';
+                }
+            };
+
+            window.closeAdminModal = function() {
+                document.getElementById('adminModal').style.display = 'none';
             };
 
             window.switchTab = function(tabId) {
@@ -2762,6 +2835,9 @@
                 document.querySelector(`.admin-tab[data-tab="${tabId}"]`).classList.add('active');
             };
 
+            // ============================================================
+            //  ЗАЯВКИ (с проверкой прав)
+            // ============================================================
             function loadRequests() {
                 const requests = JSON.parse(localStorage.getItem('app_requests') || '[]');
                 const list = document.getElementById('requestsList');
@@ -2786,7 +2862,7 @@
                 document.getElementById('statTotalRequests').textContent = stats.total;
 
                 if (requests.length === 0) {
-                    list.innerHTML = `<div class="request-empty"><i class="fa-solid fa-inbox"></i>Пока нет заявок</div>`;
+                    list.innerHTML = '<div class="request-empty"><i class="fa-solid fa-inbox"></i>Пока нет заявок</div>';
                     return;
                 }
 
@@ -2796,6 +2872,9 @@
                     'завершено': { label: '✅ Завершено', class: 'done' },
                     'отменено': { label: '⛔ Отменено', class: 'canceled' }
                 };
+
+                const canEdit = hasPermission('admin') || hasPermission('superadmin');
+                const canDelete = hasPermission('superadmin');
 
                 list.innerHTML = requests.map((r, index) => {
                     const status = r.status || 'новый';
@@ -2817,13 +2896,17 @@
                                 <div class="req-datetime"><i class="fa-regular fa-calendar"></i> ${r.dateTime || 'дата не выбрана'}</div>
                                 <div class="req-datetime"><i class="fa-regular fa-clock"></i> ${r.createdAt || 'неизвестно'}</div>
                                 <div class="req-actions">
-                                    <select class="req-status-select" onchange="updateRequestStatus(${index}, this.value)">
-                                        <option value="новый" ${status === 'новый' ? 'selected' : ''}>🟢 Новый</option>
-                                        <option value="в работе" ${status === 'в работе' ? 'selected' : ''}>🔵 В работе</option>
-                                        <option value="завершено" ${status === 'завершено' ? 'selected' : ''}>✅ Завершено</option>
-                                        <option value="отменено" ${status === 'отменено' ? 'selected' : ''}>⛔ Отменено</option>
-                                    </select>
-                                    <button class="req-delete-btn" onclick="deleteRequest(${index})" title="Удалить заявку"><i class="fa-solid fa-trash-can"></i></button>
+                                    ${canEdit ? `
+                                        <select class="req-status-select" onchange="updateRequestStatus(${index}, this.value)">
+                                            <option value="новый" ${status === 'новый' ? 'selected' : ''}>🟢 Новый</option>
+                                            <option value="в работе" ${status === 'в работе' ? 'selected' : ''}>🔵 В работе</option>
+                                            <option value="завершено" ${status === 'завершено' ? 'selected' : ''}>✅ Завершено</option>
+                                            <option value="отменено" ${status === 'отменено' ? 'selected' : ''}>⛔ Отменено</option>
+                                        </select>
+                                    ` : ''}
+                                    ${canDelete ? `
+                                        <button class="req-delete-btn" onclick="deleteRequest(${index})" title="Удалить заявку"><i class="fa-solid fa-trash-can"></i></button>
+                                    ` : ''}
                                 </div>
                             </div>
                         </div>
@@ -2832,6 +2915,10 @@
             }
 
             window.updateRequestStatus = function(index, newStatus) {
+                if (!hasPermission('admin') && !hasPermission('superadmin')) {
+                    alert('⛔ Недостаточно прав!');
+                    return;
+                }
                 const requests = JSON.parse(localStorage.getItem('app_requests') || '[]');
                 if (requests[index]) {
                     requests[index].status = newStatus;
@@ -2841,6 +2928,10 @@
             };
 
             window.deleteRequest = function(index) {
+                if (!hasPermission('superadmin')) {
+                    alert('⛔ Только супер-админ может удалять заявки!');
+                    return;
+                }
                 if (!confirm('Удалить эту заявку?')) return;
                 const requests = JSON.parse(localStorage.getItem('app_requests') || '[]');
                 requests.splice(index, 1);
@@ -2850,6 +2941,9 @@
                 if (total) total.textContent = requests.length;
             };
 
+            // ============================================================
+            //  ОСТАЛЬНОЙ ФУНКЦИОНАЛ
+            // ============================================================
             function initRealCounter() {
                 let totalVisits = localStorage.getItem('real_site_visits');
                 if (!totalVisits) totalVisits = 1;
@@ -2917,6 +3011,10 @@
             }
 
             window.saveDiscountSettings = function() {
+                if (!hasPermission('admin') && !hasPermission('superadmin')) {
+                    alert('⛔ Недостаточно прав!');
+                    return;
+                }
                 const active = document.getElementById('discountActive').checked;
                 const percent = document.getElementById('discountPercent').value || '0';
                 const code = document.getElementById('discountCode').value || 'MAGIC';
@@ -2933,6 +3031,10 @@
             };
 
             window.updateBannerText = function() {
+                if (!hasPermission('admin') && !hasPermission('superadmin')) {
+                    alert('⛔ Недостаточно прав!');
+                    return;
+                }
                 const txt = document.getElementById('bannerTextInput').value.trim();
                 if (txt) {
                     document.getElementById('announce-text').textContent = txt;
@@ -2941,6 +3043,19 @@
                 }
             };
 
+            window.resetStats = function() {
+                if (!hasPermission('superadmin')) {
+                    alert('⛔ Только супер-админ может сбрасывать статистику!');
+                    return;
+                }
+                localStorage.setItem('real_site_visits', 1);
+                document.getElementById('statTotal').innerText = '1';
+                alert('Счетчик посещений обнулен.');
+            };
+
+            // ============================================================
+            //  ЗАПИСЬ НА ПРИЁМ
+            // ============================================================
             window.openAppointmentModal = function() {
                 document.getElementById('appointmentModal').style.display = 'flex';
                 document.body.style.overflow = 'hidden';
@@ -3041,10 +3156,12 @@
                 document.getElementById('discountStatus').className = 'discount-status';
                 document.getElementById('discountStatus').style.display = 'none';
 
-                if (isAdmin) loadRequests();
+                if (currentUser) loadRequests();
             };
 
-            // === BG CANVAS ===
+            // ============================================================
+            //  BG CANVAS
+            // ============================================================
             const canvas = document.getElementById('bg-canvas');
             const ctx = canvas.getContext('2d');
 
@@ -3055,9 +3172,9 @@
             resizeCanvas();
             window.addEventListener('resize', resizeCanvas);
 
-            const particles = [];
+            const bgParticles = [];
             for (let i = 0; i < 45; i++) {
-                particles.push({
+                bgParticles.push({
                     x: Math.random() * canvas.width,
                     y: Math.random() * canvas.height,
                     radius: Math.random() * 2.5 + 1,
@@ -3069,7 +3186,7 @@
 
             function animateBg() {
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
-                particles.forEach(p => {
+                bgParticles.forEach(p => {
                     p.x += p.vx;
                     p.y += p.vy;
                     if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
@@ -3085,7 +3202,9 @@
             }
             animateBg();
 
-            // === HEADER SCROLL ===
+            // ============================================================
+            //  HEADER SCROLL
+            // ============================================================
             const header = document.getElementById('mainHeader');
             window.addEventListener('scroll', () => {
                 const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
@@ -3096,7 +3215,9 @@
                 }
             });
 
-            // === QUIZ ===
+            // ============================================================
+            //  QUIZ
+            // ============================================================
             const quizData = [
                 { q: "1. Чувствуете ли вы внезапный упадок сил без видимых причин?", a: ["Да, очень часто", "Иногда бывает", "Редко"] },
                 { q: "2. Бывают ли у вас частые беспричинные головные боли или тяжесть в плечах?", a: ["Да, постоянно", "Бывает периодически", "Нет"] },
@@ -3141,7 +3262,9 @@
             }
             loadQuestion();
 
-            // === REVIEWS ===
+            // ============================================================
+            //  REVIEWS
+            // ============================================================
             const reviews = document.querySelectorAll('.review-card');
             let currentReview = 0;
             setInterval(() => {
@@ -3150,61 +3273,145 @@
                 reviews[currentReview].classList.add('active');
             }, 5000);
 
-            // === ADMIN ===
-            window.openAdminModal = function() {
-                if (isAdmin) {
-                    document.getElementById('adminModal').style.display = 'flex';
-                    loadBannerText();
-                    loadDiscountSettings();
-                    loadRequests();
-                    const currentTotal = localStorage.getItem('real_site_visits') || 1;
-                    document.getElementById('statTotal').innerText = currentTotal;
-                    document.getElementById('statOnline').innerText = Math.floor(Math.random() * 4) + 2;
-                    sessionStorage.setItem('admin_open', 'true');
-                } else {
-                    document.getElementById('adminModal').style.display = 'flex';
+            // ============================================================
+            //  TAROT
+            // ============================================================
+            const tarotDeck = [
+                { name: 'Маг', emoji: '🧙', meaning: 'Сила воли, начало дела, уверенность', reversed: 'Неуверенность, слабость, манипуляции' },
+                { name: 'Жрица', emoji: '🌙', meaning: 'Интуиция, тайны, внутренний голос', reversed: 'Скрытое, отрицание, ложные знаки' },
+                { name: 'Императрица', emoji: '👑', meaning: 'Рост, изобилие, плодородие', reversed: 'Застой, бесплодие, творческий кризис' },
+                { name: 'Император', emoji: '🏛️', meaning: 'Власть, порядок, защита', reversed: 'Тирания, хаос, злоупотребление властью' },
+                { name: 'Иерофант', emoji: '📜', meaning: 'Мудрость, традиции, наставник', reversed: 'Бунт, разрыв с традициями, упрямство' },
+                { name: 'Влюблённые', emoji: '💞', meaning: 'Любовь, выбор, гармония', reversed: 'Конфликт, разрыв, неверный выбор' },
+                { name: 'Колесница', emoji: '🏇', meaning: 'Движение вперёд, победа, целеустремлённость', reversed: 'Поражение, пауза, потеря контроля' },
+                { name: 'Справедливость', emoji: '⚖️', meaning: 'Честность, правда, закон', reversed: 'Ложь, несправедливость, обман' },
+                { name: 'Отшельник', emoji: '🕯️', meaning: 'Уединение, мудрость, поиск истины', reversed: 'Одиночество, изоляция, страх' },
+                { name: 'Колесо Фортуны', emoji: '🎡', meaning: 'Удача, перемены, судьба', reversed: 'Неудача, застой, сопротивление переменам' },
+                { name: 'Сила', emoji: '🦁', meaning: 'Внутренняя мощь, смелость, терпение', reversed: 'Страх, слабость, потеря контроля' },
+                { name: 'Повешенный', emoji: '🙃', meaning: 'Жертва ради цели, новый взгляд', reversed: 'Тщетность, пассивность, бесполезные жертвы' },
+                { name: 'Смерть', emoji: '💀', meaning: 'Трансформация, конец и начало', reversed: 'Застой, сопротивление изменениям' },
+                { name: 'Звезда', emoji: '⭐', meaning: 'Надежда, свет, вдохновение', reversed: 'Отчаяние, потеря веры, разочарование' },
+                { name: 'Солнце', emoji: '☀️', meaning: 'Победа, радость, успех', reversed: 'Эго, отчаяние, излишняя самоуверенность' }
+            ];
+
+            const topicMap = {
+                love: ['отношения', 'любви', 'сердце'],
+                money: ['деньги', 'карьеру', 'бизнес'],
+                health: ['здоровье', 'энергию', 'самочувствие'],
+                family: ['семью', 'дом', 'род'],
+                growth: ['развитие', 'душу', 'себя'],
+                general: ['жизнь', 'путь', 'судьбу']
+            };
+
+            let selectedTopic = 'love';
+            let isTarotReady = true;
+
+            document.querySelectorAll('.tarot-topic-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    document.querySelectorAll('.tarot-topic-btn').forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    selectedTopic = this.dataset.topic;
+                });
+            });
+
+            document.getElementById('tarotButton').addEventListener('click', function() {
+                if (!isTarotReady) return;
+                isTarotReady = false;
+                this.disabled = true;
+
+                const resultEl = document.getElementById('tarotResult');
+                resultEl.style.display = 'none';
+
+                const shuffleEl = document.getElementById('tarotShuffle');
+                shuffleEl.style.display = 'block';
+
+                setTimeout(() => {
+                    shuffleEl.style.display = 'none';
+                    resultEl.style.display = 'block';
+                    generateTarotReading();
+                    isTarotReady = true;
+                    document.getElementById('tarotButton').disabled = false;
+                }, 2200);
+            });
+
+            function generateTarotReading() {
+                const cards = document.getElementById('tarotCards');
+                const summary = document.getElementById('tarotSummary');
+
+                const shuffled = [...tarotDeck];
+                for (let i = shuffled.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
                 }
+                const selected = shuffled.slice(0, 3);
+
+                const positions = ['Прошлое', 'Настоящее', 'Будущее'];
+                let html = '';
+                let meanings = [];
+
+                selected.forEach((card, index) => {
+                    const isReversed = Math.random() < 0.3;
+                    const meaning = isReversed ? card.reversed : card.meaning;
+                    meanings.push(meaning);
+                    html += `
+                        <div class="tarot-card-item" style="transition-delay: ${index * 0.3}s">
+                            <div class="card-position">${positions[index]}</div>
+                            <span class="card-emoji">${card.emoji}</span>
+                            <div class="card-name">${card.name} ${isReversed ? '🔄' : ''}</div>
+                            <div class="card-meaning">${meaning}</div>
+                            ${isReversed ? '<span class="card-reversed">⟳ Перевёрнутый Аркан</span>' : ''}
+                        </div>
+                    `;
+                });
+
+                cards.innerHTML = html;
+
+                setTimeout(() => {
+                    document.querySelectorAll('.tarot-card-item').forEach(el => {
+                        el.classList.add('revealed');
+                    });
+                }, 100);
+
+                const topic = topicMap[selectedTopic] || ['жизнь'];
+                const topicWord = topic[0];
+
+                const introPhrases = [
+                    `Арканы говорят о вашем <i>${topicWord}</i>.`,
+                    `Сила карт раскрывает тайны вашего <i>${topicWord}</i>.`,
+                    `Древние знаки указывают на ваш <i>${topicWord}</i>.`
+                ];
+
+                const connectionPhrases = [
+                    `Прошлое привело вас к текущему моменту, а будущее открывается через <i>${meanings[2].toLowerCase()}</i>.`,
+                    `Вы прошли через <i>${meanings[0].toLowerCase()}</i>, сейчас важно <i>${meanings[1].toLowerCase()}</i>, а впереди вас ждёт <i>${meanings[2].toLowerCase()}</i>.`,
+                    `Ваш путь: от <i>${meanings[0].toLowerCase()}</i> через <i>${meanings[1].toLowerCase()}</i> к <i>${meanings[2].toLowerCase()}</i>.`
+                ];
+
+                const advicePhrases = [
+                    `Слушайте интуицию и доверяйте процессу.`,
+                    `Будьте честны с собой и окружающими.`,
+                    `Не бойтесь перемен — они ведут к росту.`,
+                    `Внутренняя сила уже есть у вас — просто позвольте ей проявиться.`,
+                    `Ваше сердце знает правильный путь.`
+                ];
+
+                const final = `${introPhrases[Math.floor(Math.random() * introPhrases.length)]} ${connectionPhrases[Math.floor(Math.random() * connectionPhrases.length)]} ${advicePhrases[Math.floor(Math.random() * advicePhrases.length)]}`;
+
+                summary.innerHTML = `✨ ${final} ✨`;
+            }
+
+            window.resetTarot = function() {
+                document.getElementById('tarotResult').style.display = 'none';
+                document.getElementById('tarotQuestion').value = '';
+                document.getElementById('tarotCards').innerHTML = '';
+                document.getElementById('tarotSummary').innerHTML = 'Магическая сила арканов говорит с вами...';
+                isTarotReady = true;
+                document.getElementById('tarotButton').disabled = false;
             };
 
-            window.closeAdminModal = function() {
-                document.getElementById('adminModal').style.display = 'none';
-                sessionStorage.setItem('admin_open', 'false');
-            };
-
-            window.loginAdmin = function() {
-                const u = document.getElementById('adminUser').value;
-                const p = document.getElementById('adminPass').value;
-                const err = document.getElementById('adminError');
-
-                if (u === 'admin' && p === 'admin') {
-                    err.style.display = 'none';
-                    localStorage.setItem('admin_session', 'true');
-                    sessionStorage.setItem('admin_open', 'true');
-                    document.getElementById('adminLoginForm').style.display = 'none';
-                    document.getElementById('adminPanelContent').style.display = 'block';
-                    applyAdminMode();
-                    loadBannerText();
-                    loadDiscountSettings();
-                    loadRequests();
-                    const currentTotal = localStorage.getItem('real_site_visits') || 1;
-                    document.getElementById('statTotal').innerText = currentTotal;
-                    document.getElementById('statOnline').innerText = Math.floor(Math.random() * 4) + 2;
-                    document.getElementById('adminIndicator').style.display = 'inline-flex';
-                    document.getElementById('adminLoginText').textContent = 'Выйти';
-                } else {
-                    err.style.display = 'block';
-                }
-            };
-
-            window.resetStats = function() {
-                localStorage.setItem('real_site_visits', 1);
-                document.getElementById('statTotal').innerText = '1';
-                alert('Счетчик посещений обнулен.');
-            };
-
-            if (isAdmin) loadRequests();
-
-            // === MAGIC PARTICLES ===
+            // ============================================================
+            //  MAGIC PARTICLES
+            // ============================================================
             (function() {
                 const magicLayer = document.createElement('div');
                 magicLayer.id = 'magic-particles';
@@ -3373,7 +3580,9 @@
 
             })();
 
-            // === FAKE NOTIFICATIONS ===
+            // ============================================================
+            //  FAKE NOTIFICATIONS
+            // ============================================================
             (function() {
                 const fakeUsers = [
                     { name: "Оксана", city: "Львов" },
@@ -3436,6 +3645,22 @@
                 setTimeout(showNotification, firstDelay);
 
             })();
+
+            // ============================================================
+            //  ПРОВЕРКА СЕССИИ ПРИ ЗАГРУЗКЕ
+            // ============================================================
+            if (currentUser) {
+                document.getElementById('adminIndicator').style.display = 'inline-flex';
+                document.getElementById('adminLoginText').textContent = 'Выйти';
+                document.querySelector('.btn-admin-login').innerHTML = '<i class="fa-solid fa-user-shield"></i> <span id="adminLoginText">Выйти</span>';
+                if (currentUser.role === 'superadmin') {
+                    document.getElementById('adminIndicator').innerHTML = '<i class="fa-solid fa-circle"></i> СУПЕР-АДМИН';
+                } else if (currentUser.role === 'admin') {
+                    document.getElementById('adminIndicator').innerHTML = '<i class="fa-solid fa-circle"></i> АДМИН';
+                } else {
+                    document.getElementById('adminIndicator').innerHTML = '<i class="fa-solid fa-circle"></i> МОДЕРАТОР';
+                }
+            }
 
         });
     </script>
